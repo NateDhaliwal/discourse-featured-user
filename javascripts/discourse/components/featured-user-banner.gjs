@@ -1,4 +1,3 @@
-import { on } from "@ember/modifier";
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
@@ -43,18 +42,20 @@ export default class FeaturedUserBanner extends Component {
 
 
   <template>
-    <div class="user-card-avatar" aria-hidden="true">
-      {{#if this.showAvatar}}
-        <a
-          href={{this.user.path}}
-          class="card-huge-avatar"
-          tabindex="-1"
-        >{{boundAvatar this.user "huge"}}</a>
-      {{/if}}
-
-      {{#if this.showAvatarFlair}}
-        <UserAvatarFlair @user={{this.user}} />
-      {{/if}}
-    </div>
+    {{#if this.shouldShow}}
+      <div class="user-card-avatar" aria-hidden="true">
+        {{#if this.showAvatar}}
+          <a
+            href={{this.user.path}}
+            class="card-huge-avatar"
+            tabindex="-1"
+          >{{boundAvatar this.user "huge"}}</a>
+        {{/if}}
+  
+        {{#if this.showAvatarFlair}}
+          <UserAvatarFlair @user={{this.user}} />
+        {{/if}}
+      </div>
+    {{/if}}
   </template>
 }
