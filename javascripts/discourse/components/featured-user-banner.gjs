@@ -59,7 +59,7 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
-          {{#if (eq this.featuredUserBannerTextPosition "above"}}
+          {{#if (eq this.featuredUserBannerTextPosition "above")}}
             <div class="featured-banner-text-above">
               <h2>{{this.featuredUserBannerText}}</h2>
             </div>
@@ -153,7 +153,7 @@ export default class FeaturedUserBanner extends Component {
               {{/if}}
             </ul>
           </div>
-          {{#if (eq this.featuredUserBannerTextPosition "below"}}
+          {{#if (eq this.featuredUserBannerTextPosition "below")}}
             <div class="featured-banner-text-below">
               <h2>{{this.featuredUserBannerText}}</h2>
             </div>
