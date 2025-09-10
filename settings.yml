@@ -7,11 +7,11 @@ featured_user_banner_text:
   type: string
 
 featured_user_banner_text_position:
-  default: "below user info"
+  default: below-user-info
   type: enum
   options:
-    - above user info
-    - below user info
+    - above-user-info
+    # - below-user-info
 
 featured_user_banner_display_start_date:
   default: ""
