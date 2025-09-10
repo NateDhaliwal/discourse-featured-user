@@ -29,6 +29,7 @@ export default class FeaturedUserBanner extends Component {
 
   get shouldShow() {
     console.log(this.user);
+    console.log(this.userSummary);
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
