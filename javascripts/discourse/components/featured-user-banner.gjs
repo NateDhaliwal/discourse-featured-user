@@ -6,7 +6,7 @@ import { ajax } from "discourse/lib/ajax";
 import User from "discourse/models/user";
 
 export default class FeaturedUserBanner extends Component {
-  @tracked userModel = User.findByUsername(settings.featured_user.trim());
+  @tracked userModel;
   @tracked user;
 
   // Add checking with timestamps one day?
@@ -31,6 +31,8 @@ export default class FeaturedUserBanner extends Component {
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
     this.user = userData.user;
+    const userModelData = await User.findByUsername(settings.featured_user.trim());
+    this.userModel = userModelData;
   }
 
 
