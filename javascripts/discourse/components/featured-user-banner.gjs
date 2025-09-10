@@ -9,6 +9,7 @@ import { and } from "truth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
+import formatUsername from "discourse/helpers/format-username";
 
 export default class FeaturedUserBanner extends Component {
   @tracked user;
@@ -62,6 +63,32 @@ export default class FeaturedUserBanner extends Component {
               tabindex="-1"
             >{{boundAvatar this.user "huge"}}</a>
             <UserAvatarFlair @user={{this.user}} />
+          </div>
+
+          <div class="user-info">
+            <div class="details">
+              <div class="primary">
+                <PluginOutlet
+                  @name="before-user-profile-avatar"
+                  @outletArgs={{lazyHash model=@controller.model}}
+                />
+                <UserProfileAvatar @user={{@controller.model}} @tagName="" />
+                <div class="primary-textual">
+                  <div class="user-profile-names">
+                    <div
+                      class="username user-profile-names__primary"
+                    >
+                      {{formatUsername this.user.username}}
+                    </div>
+                    {{#if this.user.title}}
+                      <div
+                        class="user-profile-names__title"
+                      >{{this.user.title}}</div>
+                    {{/if}}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="user-stats-section stats-section top-section">
