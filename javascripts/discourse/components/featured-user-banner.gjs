@@ -44,7 +44,7 @@ export default class FeaturedUserBanner extends Component {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
     this.user = userData.user;
     const userSummaryData = await ajax(`/u/${settings.featured_user.trim()}/summary`);
-    this.userSummary = userSummaryData.user;
+    this.userSummary = userSummaryData.user_summary;
     this.loading = false;
   }
 
