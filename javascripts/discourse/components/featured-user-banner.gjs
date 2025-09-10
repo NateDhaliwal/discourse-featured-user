@@ -30,8 +30,6 @@ export default class FeaturedUserBanner extends Component {
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
-  get showAvatar() { return settings.display_avatar; }
-  get showAvatarFlair() { return settings.display_flair; }
   get showReadTime() { return settings.display_total_read_time; }
   get showDaysVisited() { return settings.display_total_days_visited; }
   get showTotalPosts() { return settings.display_total_post_count; }
