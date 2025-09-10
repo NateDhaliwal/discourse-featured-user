@@ -14,7 +14,7 @@ export default class FeaturedUserBanner extends Component {
 
   get shouldShow() {
     console.log(this.user);
-    return this.startDate <= this.dateNow && this.dateNow <= endDate;
+    return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
   get showAvatar() { return settings.display_avatar; }
