@@ -2,4 +2,15 @@ en:
   theme_metadata:
     description: "Adds a banner to the top of the site to feature a user"
     settings:
-      example_setting: "A description of a setting."
+      featured_user: "The username of the user you want to feature"
+      featured_user_banner_text: "The text in the banner to describe what the user has done"
+      featured_user_banner_display_start_date: "The date when the banner would start showing; format is YYYY-MM-DD"
+      featured_user_banner_display_end_date: "The date when the banner would stop showing; Format is YYYY-MM-DD"
+      display_total_likes_given: "Display the total likes given from the user"
+      display_total_likes_received: "Display the total like received by the user"
+      display_total_post_count: "Display the total posts made by the user"
+      display_total_topic_count: "Display the total topics made by the user"
+      display_title: "Display the title of the user"
+      display_flair: "(RECOMMENDED) Display the flair of the user"
+      display_avatar: "(RECOMMENDED) Display the avatar of the user"
+      display_trust_level: "Display the Trust Level of the user"
