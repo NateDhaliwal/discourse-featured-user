@@ -28,8 +28,8 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get shouldShow() {
-    console.log(this.user);
-    console.log(this.userSummary);
+    console.log("User:" + this.user);
+    console.log("Summary:" + this.userSummary);
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
@@ -58,7 +58,6 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
-          <h1>THIS:{{this.user}}</h1>
           <div class="user-info">
             <div class="details">
               <div class="primary">
