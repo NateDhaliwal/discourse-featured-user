@@ -98,7 +98,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-days-visited">
                   <UserStat
                     @value={{this.userSummary.days_visited}}
-                    @label="user.summary.days_visited"
+                    @label={{if (gt this.userSummary.days_visited 1) "user.summary.days_visited.other" "user.summary.days_visited.one"}}
                   />
                 </li>
               {{/if}}
