@@ -13,6 +13,3 @@ en:
       display_total_read_time: "Display the total read time by the user"
       display_total_days_visited: "Display the total number of days visited by the user"
       display_title: "Display the title of the user"
-      display_flair: "(RECOMMENDED) Display the flair of the user"
-      display_avatar: "(RECOMMENDED) Display the avatar of the user"
-      display_trust_level: "Display the Trust Level of the user"
