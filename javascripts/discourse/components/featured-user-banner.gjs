@@ -28,8 +28,8 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get shouldShow() {
-    console.log("User:" + this.user);
-    console.log("Summary:" + this.userSummary);
+    console.log(this.user);
+    console.log(this.userSummary);
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
@@ -69,6 +69,11 @@ export default class FeaturedUserBanner extends Component {
                     class="username user-profile-names__primary"
                   >
                     {{formatUsername this.user.username}}
+                    {{this.userSummary.days_visited}}
+                    {{this.userSummary.likes_given}}
+                    {{this.userSummary.likes_received}}
+                    {{this.userSummary.topic_count}}
+                    {{this.userSummary.post_count}}
                   </div>
                   {{#if this.user.title}}
                     <div
