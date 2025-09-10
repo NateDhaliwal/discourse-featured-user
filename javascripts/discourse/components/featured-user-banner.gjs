@@ -69,7 +69,7 @@ export default class FeaturedUserBanner extends Component {
                     class="username user-profile-names__primary"
                   >
                     {{formatUsername this.user.username}}
-                    {{if (this.user.name) this.user.name}}
+                    {{this.user.name}}
                   </div>
                   {{#if this.user.title}}
                     <div
