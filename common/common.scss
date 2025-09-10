@@ -29,6 +29,6 @@
   order: 3;
 }
 
-.user-info {
+.user-info, .user-info > .details {
   display: flex;
 }
