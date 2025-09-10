@@ -1,4 +1,13 @@
 en:
+  user:
+    summary:
+      days_visited: "%{count} days visited"
+      likes_given: "%{count} given"
+      likes_received: "%{count} received"
+      topic_count: "%{count} topics created"
+      post_count: "%{count} posts created"
+      
+    
   theme_metadata:
     description: "Adds a banner to the top of the site to feature a user"
     settings:
