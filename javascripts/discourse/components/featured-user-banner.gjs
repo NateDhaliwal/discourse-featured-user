@@ -57,6 +57,7 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
+          <!--
           <div class="user-avatar" aria-hidden="true">
             <a
               href={{this.userProfileURL}}
@@ -65,11 +66,12 @@ export default class FeaturedUserBanner extends Component {
             >{{boundAvatar this.user "huge"}}</a>
             <UserAvatarFlair @user={{this.user}} />
           </div>
-
+          -->
           <div class="user-info">
             <div class="details">
               <div class="primary">
                 <UserProfileAvatar @user={{this.user}} @tagName="" />
+                <UserAvatarFlair @user={{this.user}} />
                 <div class="primary-textual">
                   <div class="user-profile-names">
                     <div
