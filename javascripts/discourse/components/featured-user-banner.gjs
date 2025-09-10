@@ -70,7 +70,7 @@ export default class FeaturedUserBanner extends Component {
               tabindex="-1"
             >{{boundAvatar this.user "huge"}}</a>
           {{/if}}
-    
+
           {{#if this.showAvatarFlair}}
             <UserAvatarFlair @user={{this.user}} />
           {{/if}}
