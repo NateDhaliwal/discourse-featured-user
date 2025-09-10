@@ -9,7 +9,7 @@ featured_user_banner_text:
 featured_user_banner_text_position:
   default: below-user-info
   type: enum
-  options:
+  choices:
     - above-user-info
     # - below-user-info
 
