@@ -68,7 +68,7 @@ export default class FeaturedUserBanner extends Component {
       {{else}}
         <div class="featured-user-banner">
           {{#if this.showAvatar}}
-            <div class="user-avatar" style="width: 8em;" aria-hidden="true">
+            <div class="user-avatar" aria-hidden="true">
               <a
                 href={{this.userModel.path}}
                 class="card-huge-avatar"
