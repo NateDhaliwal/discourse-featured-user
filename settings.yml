@@ -23,11 +23,11 @@ display_total_likes_received:
   type: bool
 
 display_total_post_count:
-  default: true
+  default: false
   type: bool
 
 display_total_topic_count:
-  default: true
+  default: false
   type: bool
 
 display_title:
@@ -44,3 +44,4 @@ display_avatar:
 
 display_trust_level:
   default: false
+  type: bool
