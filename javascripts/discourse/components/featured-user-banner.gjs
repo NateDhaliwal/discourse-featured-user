@@ -6,7 +6,7 @@ import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
-import { eq } from "truth-helpers";
+import { eq, notEq } from "truth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
@@ -69,8 +69,14 @@ export default class FeaturedUserBanner extends Component {
                     class="username user-profile-names__primary"
                   >
                     {{formatUsername this.user.username}}
-                    {{this.user.name}}
                   </div>
+
+                  {{#if (notEq this.user.name "")}}
+                    <div class="name">
+                      <h3>{{this.user.name}}</h3>
+                    </div>
+                  {{/if}}
+
                   {{#if this.user.title}}
                     <div
                       class="user-profile-names__title"
