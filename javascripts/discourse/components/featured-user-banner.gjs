@@ -6,7 +6,7 @@ import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
-import { gt } from "truth-helpers";
+import { eq } from "truth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
@@ -87,14 +87,14 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-days-visited">
                   <UserStat
                     @value={{this.userSummary.days_visited}}
-                    @label={{if (gt this.userSummary.days_visited 1) "user.summary.days_visited.other" "user.summary.days_visited.one"}}
+                    @label={{if (eq this.userSummary.days_visited 1) "user.summary.days_visited.other" "user.summary.days_visited.other"}}
                   />
                 </li>
               {{/if}}
               {{#if this.showReadTime}}
                 <li class="stats-time-read">
                   <UserStat
-                    @value={{this.userSummary.time_read}}
+                    @value={{formatDuration this.userSummary.time_read}}
                     @label="user.summary.time_read"
                     @rawTitle={{i18n
                       "user.summary.time_read_title"
@@ -109,7 +109,7 @@ export default class FeaturedUserBanner extends Component {
                   <UserStat
                     @value={{this.userSummary.likes_given}}
                     @icon="heart"
-                    @label={{if (gt this.userSummary.likes_given 1) "user.summary.likes_given.other" "user.summary.likes_given.one"}}
+                    @label={{if (eq this.userSummary.likes_given 1) "user.summary.likes_given.one" "user.summary.likes_given.other"}}
                   />
                 </li>
               {{/if}}
@@ -118,7 +118,7 @@ export default class FeaturedUserBanner extends Component {
                   <UserStat
                     @value={{this.userSummary.likes_received}}
                     @icon="heart"
-                    @label={{if (gt this.userSummary.likes_received 1) "user.summary.likes_received.other" "user.summary.likes_received.one"}}
+                    @label={{if (eq this.userSummary.likes_received 1) "user.summary.likes_received.one" "user.summary.likes_received.other"}}
                   />
                 </li>
               {{/if}}
@@ -126,7 +126,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-topic-count">
                   <UserStat
                     @value={{this.userSummary.topic_count}}
-                    @label={{if (gt this.userSummary.topic_count 1) "user.summary.topic_count.other" "user.summary.topic_count.one"}}
+                    @label={{if (eq this.userSummary.topic_count 1) "user.summary.topic_count.one" "user.summary.topic_count.other"}}
                   />
                 </li>
               {{/if}}
@@ -134,7 +134,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-post-count">
                   <UserStat
                     @value={{this.userSummary.post_count}}
-                    @label={{if (gt this.userSummary.post_count 1) "user.summary.post_count.other" "user.summary.post_count.one"}}
+                    @label={{if (eq this.userSummary.post_count 1) "user.summary.post_count.one" "user.summary.post_count.other"}}
                   />
                 </li>
               {{/if}}
