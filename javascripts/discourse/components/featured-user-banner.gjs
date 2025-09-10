@@ -69,7 +69,7 @@ export default class FeaturedUserBanner extends Component {
           <div class="user-info">
             <div class="details">
               <div class="primary">
-                <UserProfileAvatar @user={{@controller.model}} @tagName="" />
+                <UserProfileAvatar @user={{@this.user}} @tagName="" />
                 <div class="primary-textual">
                   <div class="user-profile-names">
                     <div
