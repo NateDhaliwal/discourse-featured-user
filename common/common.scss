@@ -16,23 +16,14 @@
 .user-avatar {
   @if $display_avatar == "true" {
     order: 1;
+    margin-right: 2em;
   }
   width: 8em;
 }
 
-.user-stats {
+.user-stats-section {
   @if $display_avatar == "true" {
     order: 2;
   }
-  display: flex;
-  flex-direction: row;
 }
 
-.user-stats-row {
-  display: flex;
-  flex-direction: column;
-}
-
-.user-stats-item {
-  flex: 1;
-}
