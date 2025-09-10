@@ -6,7 +6,7 @@ featured_user_banner_text:
   default: ""
   type: string
 
-featured_user_banner_text_position
+featured_user_banner_text_position:
   default: "below user info"
   type: enum
   options:
