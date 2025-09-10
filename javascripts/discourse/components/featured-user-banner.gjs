@@ -9,7 +9,7 @@ import User from "discourse/models/user";
 export default class FeaturedUserBanner extends Component {
   @tracked userModel;
   @tracked user;
-  @tracked loading = false;
+  @tracked loading = true;
 
   // Add checking with timestamps one day?
   startDate = new Date(settings.featured_user_banner_display_start_date.trim());
@@ -35,7 +35,7 @@ export default class FeaturedUserBanner extends Component {
     this.user = userData.user;
     const userModelData = await User.findByUsername(settings.featured_user.trim());
     this.userModel = userModelData;
-    this.loading = true;
+    this.loading = false;
   }
 
 
