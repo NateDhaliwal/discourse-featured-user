@@ -5,6 +5,7 @@ import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import { ajax } from "discourse/lib/ajax";
 import User from "discourse/models/user";
+import formatDuration from "discourse/helpers/format-duration";
 
 export default class FeaturedUserBanner extends Component {
   @tracked userModel;
@@ -29,6 +30,7 @@ export default class FeaturedUserBanner extends Component {
 
   get showAvatar() { return settings.display_avatar; }
   get showAvatarFlair() { return settings.display_flair; }
+  get showReadTime() { return settings.display_total_read_time; }
 
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
@@ -62,7 +64,7 @@ export default class FeaturedUserBanner extends Component {
       {{#if this.loading}}
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
-        <div class="user-card-avatar" aria-hidden="true">
+        <div class="user-card-avatar" style="width: var(--avatar-width);" aria-hidden="true">
           {{#if this.showAvatar}}
             <a
               href={{this.userModel.path}}
@@ -73,6 +75,11 @@ export default class FeaturedUserBanner extends Component {
 
           {{#if this.showAvatarFlair}}
             <UserAvatarFlair @user={{this.user}} />
+          {{/if}}
+
+          {{#if this.showReadTime}}
+            <span class="desc">{{i18n "time_read"}}</span>
+            {{formatDuration this.user.time_read}}
           {{/if}}
         </div>
       {{/if}}
