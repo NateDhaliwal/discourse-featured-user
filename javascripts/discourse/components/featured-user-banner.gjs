@@ -70,7 +70,7 @@ export default class FeaturedUserBanner extends Component {
             </div>
           {{/if}}
 
-          <div class="top-section stats-section">
+          <div class="user-stats-section">
             <h3 class="stats-title">{{i18n "user.summary.stats"}}</h3>
             <ul>
               {{#if this.showDaysVisited}}
