@@ -98,7 +98,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-days-visited">
                   <UserStat
                     @value={{this.userSummary.days_visited}}
-                    @label={{i18n "user.summary.days_visited"}}
+                    @label="user.summary.days_visited"
                   />
                 </li>
               {{/if}}
@@ -106,7 +106,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-time-read">
                   <UserStat
                     @value={{this.userSummary.time_read}}
-                    @label={{i18n "user.summary.time_read"}}
+                    @label="user.summary.time_read"
                     @rawTitle={{i18n
                       "user.summary.time_read_title"
                       duration=this.userSummary.timeReadMedium
@@ -120,7 +120,7 @@ export default class FeaturedUserBanner extends Component {
                   <UserStat
                     @value={{this.userSummary.likes_given}}
                     @icon="heart"
-                    @label={{i18n "user.summary.likes_given"}}
+                    @label="user.summary.likes_given"
                   />
                 </li>
               {{/if}}
@@ -129,7 +129,7 @@ export default class FeaturedUserBanner extends Component {
                   <UserStat
                     @value={{this.userSummary.likes_received}}
                     @icon="heart"
-                    @label={{i18n "user.summary.likes_received"}}
+                    @label="user.summary.likes_received"
                   />
                 </li>
               {{/if}}
@@ -137,7 +137,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-topic-count">
                   <UserStat
                     @value={{this.userSummary.topic_count}}
-                    @label={{i18n "user.summary.topic_count"}}
+                    @label="user.summary.topic_count"
                   />
                 </li>
               {{/if}}
@@ -145,7 +145,7 @@ export default class FeaturedUserBanner extends Component {
                 <li class="stats-post-count">
                   <UserStat
                     @value={{this.userSummary.post_count}}
-                    @label={{i18n "user.summary.post_count"}}
+                    @label="user.summary.post_count"
                   />
                 </li>
               {{/if}}
