@@ -68,10 +68,6 @@ export default class FeaturedUserBanner extends Component {
           <div class="user-info">
             <div class="details">
               <div class="primary">
-                <PluginOutlet
-                  @name="before-user-profile-avatar"
-                  @outletArgs={{lazyHash model=@controller.model}}
-                />
                 <UserProfileAvatar @user={{@controller.model}} @tagName="" />
                 <div class="primary-textual">
                   <div class="user-profile-names">
