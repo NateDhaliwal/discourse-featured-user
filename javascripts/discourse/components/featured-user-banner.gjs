@@ -6,7 +6,7 @@ import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
-import { and, gt } from "truth-helpers";
+import { gt } from "truth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
@@ -57,16 +57,7 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
-          <!--
-          <div class="user-avatar" aria-hidden="true">
-            <a
-              href={{this.userProfileURL}}
-              class="card-huge-avatar"
-              tabindex="-1"
-            >{{boundAvatar this.user "huge"}}</a>
-            <UserAvatarFlair @user={{this.user}} />
-          </div>
-          -->
+          {{this.userSummary.days_visited}}
           <div class="user-info">
             <div class="details">
               <div class="primary">
