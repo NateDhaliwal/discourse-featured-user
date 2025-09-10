@@ -6,6 +6,7 @@ import ConditionalLoadingSpinner from "discourse/components/conditional-loading-
 import { ajax } from "discourse/lib/ajax";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
+import { i18n } from "discourse-i18n";
 
 export default class FeaturedUserBanner extends Component {
   @tracked userModel;
