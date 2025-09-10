@@ -94,14 +94,6 @@ export default class FeaturedUserBanner extends Component {
                   />
                 </li>
               {{/if}}
-              <!--
-              <li class="stats-posts-read">
-                <UserStat
-                  @value={{this.userSummary.posts_read_count}}
-                  @label="user.summary.posts_read"
-                />
-              </li>
-              -->
               {{#if this.showLikesGiven}}
                 <li class="stats-likes-given">
                   <UserStat
