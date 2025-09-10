@@ -10,8 +10,8 @@ import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
 
 export default class FeaturedUserBanner extends Component {
-  @tracked userModel;
   @tracked user;
+  @tracked userSummary;
   @tracked loading = true;
 
   // Add checking with timestamps one day?
@@ -26,7 +26,6 @@ export default class FeaturedUserBanner extends Component {
 
   get shouldShow() {
     console.log(this.user);
-    console.log(this.userModel);
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
@@ -41,9 +40,13 @@ export default class FeaturedUserBanner extends Component {
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
     this.user = userData.user;
-    const userModelData = await User.findByUsername(settings.featured_user.trim());
-    this.userModel = userModelData;
+    const userSummaryData = await ajax(`/u/{%{settings.featured_user.trim()}`);
+    this.userSummary = summaryData;
     this.loading = false;
+  }
+
+  get userProfileURL() {
+    return `/u/${this.user.username}`;
   }
 
   <template>
@@ -55,7 +58,7 @@ export default class FeaturedUserBanner extends Component {
           {{#if this.showAvatar}}
             <div class="user-avatar" style="max-height: 8em; width: 8em;" aria-hidden="true">
               <a
-                href={{this.userModel.path}}
+                href={{this.userProfileURL}}
                 class="card-huge-avatar"
                 tabindex="-1"
               >{{boundAvatar this.user "huge"}}</a>
@@ -66,10 +69,19 @@ export default class FeaturedUserBanner extends Component {
           {{/if}}
 
           <div class="user-stats">
-            {{#if this.showReadTime}}
-              <span class="desc">{{i18n "time_read"}}</span>
-              {{formatDuration this.user.time_read}}
-            {{/if}}
+            <div class="user-stats-row" style="order: 1;">
+              {{#if this.showReadTime}}
+                <span class="desc">{{i18n "time_read"}}</span>
+                {{formatDuration this.user.time_read}}
+              {{/if}}
+            </div>
+            <div class="user-stats-row" style="order: 2;">
+              {{#if this.showTotalPosts}}
+                <span class="desc">{{i18n "time_read"}}</span>
+                {{formatDuration this.user.time_read}}
+              {{/if}}
+            </div>
+            
           </div>
         </div>
       {{/if}}
