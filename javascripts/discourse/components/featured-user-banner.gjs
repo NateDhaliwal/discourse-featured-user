@@ -2,15 +2,22 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
+import { ajax } from "discourse/lib/ajax";
 import User from "discourse/models/user";
 
 export default class FeaturedUserBanner extends Component {
-  @tracked user = User.findByUsername(settings.featured_user.trim());
+  @tracked userModel = User.findByUsername(settings.featured_user.trim());
+  @tracked user;
 
   // Add checking with timestamps one day?
   startDate = new Date(settings.featured_user_banner_display_start_date.trim());
   endDate = new Date(settings.featured_user_banner_display_end_date.trim());
   dateNow = new Date(Date.now());
+
+  constructor() {
+    super(...arguments);
+    this.getUser();
+  }
 
   get shouldShow() {
     console.log(this.user);
@@ -20,7 +27,10 @@ export default class FeaturedUserBanner extends Component {
   get showAvatar() { return settings.display_avatar; }
   get showAvatarFlair() { return settings.display_flair; }
 
-
+  async getUser() {
+    const userData = await ajax(`/u/${settings.featured_user.trim()}`);
+    this.user = userData.user;
+  }
 
 
 
