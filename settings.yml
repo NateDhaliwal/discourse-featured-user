@@ -30,6 +30,10 @@ display_total_topic_count:
   default: false
   type: bool
 
+display_total_read_time:
+  default: false
+  type: bool
+
 display_title:
   default: true
   type: bool
