@@ -2,6 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
+import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
