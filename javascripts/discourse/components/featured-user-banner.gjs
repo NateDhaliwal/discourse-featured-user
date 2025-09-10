@@ -33,6 +33,10 @@ export default class FeaturedUserBanner extends Component {
   get showAvatar() { return settings.display_avatar; }
   get showAvatarFlair() { return settings.display_flair; }
   get showReadTime() { return settings.display_total_read_time; }
+  get showTotalPosts() { return settings.display_total_post_count; }
+  get showTotalTopics() { return settings.display_total_topic_time; }
+  get showLikesGiven() { return settings.display_total_likes_given; }
+  get showLikesReceived() { return settings.display_total_likes_received; }
 
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
@@ -41,25 +45,6 @@ export default class FeaturedUserBanner extends Component {
     this.userModel = userModelData;
     this.loading = false;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   <template>
     {{#if this.shouldShow}}
@@ -80,10 +65,12 @@ export default class FeaturedUserBanner extends Component {
             </div>
           {{/if}}
 
-          {{#if this.showReadTime}}
-            <span class="desc">{{i18n "time_read"}}</span>
-            {{formatDuration this.user.time_read}}
-          {{/if}}
+          <div class="user-stats">
+            {{#if this.showReadTime}}
+              <span class="desc">{{i18n "time_read"}}</span>
+              {{formatDuration this.user.time_read}}
+            {{/if}}
+          </div>
         </div>
       {{/if}}
     {{/if}}
