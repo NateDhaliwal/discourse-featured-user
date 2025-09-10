@@ -71,7 +71,6 @@ export default class FeaturedUserBanner extends Component {
             <div class="details">
               <div class="primary">
                 <UserProfileAvatar @user={{this.user}} @tagName="" />
-                <UserAvatarFlair @user={{this.user}} />
                 <div class="primary-textual">
                   <div class="user-profile-names">
                     <div
@@ -123,13 +122,15 @@ export default class FeaturedUserBanner extends Component {
                   />
                 </li>
               {{/if}}
-              <li class="stats-likes-received">
-                <UserStat
-                  @value={{this.userSummary.likes_received}}
-                  @icon="heart"
-                  @label="user.summary.likes_received"
-                />
-              </li>
+              {{#if this.showLikesReceived}}
+                <li class="stats-likes-received">
+                  <UserStat
+                    @value={{this.userSummary.likes_received}}
+                    @icon="heart"
+                    @label="user.summary.likes_received"
+                  />
+                </li>
+              {{/if}}
               {{#if this.showTotalTopics}}
                 <li class="stats-topic-count">
                   <UserStat
