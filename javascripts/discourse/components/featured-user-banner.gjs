@@ -4,6 +4,7 @@ import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import { ajax } from "discourse/lib/ajax";
+import { and } from "trusth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
@@ -65,17 +66,18 @@ export default class FeaturedUserBanner extends Component {
       {{#if this.loading}}
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
-        <div class="user-card-avatar" style="width: 8em;" aria-hidden="true">
+        <div class="featured-user-banner">
           {{#if this.showAvatar}}
-            <a
-              href={{this.userModel.path}}
-              class="card-huge-avatar"
-              tabindex="-1"
-            >{{boundAvatar this.user "huge"}}</a>
-          {{/if}}
-
-          {{#if this.showAvatarFlair}}
-            <UserAvatarFlair @user={{this.user}} />
+            <div class="user-avatar" style="width: 8em;" aria-hidden="true">
+              <a
+                href={{this.userModel.path}}
+                class="card-huge-avatar"
+                tabindex="-1"
+              >{{boundAvatar this.user "huge"}}</a>
+              {{#if (and this.showAvatarFlair this.showAvatar)}}
+                <UserAvatarFlair @user={{this.user}} />
+              {{/if}}
+            </div>
           {{/if}}
 
           {{#if this.showReadTime}}
