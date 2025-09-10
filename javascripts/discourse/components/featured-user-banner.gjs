@@ -60,23 +60,21 @@ export default class FeaturedUserBanner extends Component {
         <div class="featured-user-banner">
           <div class="user-info">
             <div class="details">
-              <div class="primary">
-                <div class="user-info-avatar">
-                  <UserProfileAvatar @user={{this.user}} @tagName="user-info-avatar" />
-                </div>
-                <div class="primary-textual">
-                  <div class="user-profile-names">
-                    <div
-                      class="username user-profile-names__primary"
-                    >
-                      {{formatUsername this.user.username}}
-                    </div>
-                    {{#if this.user.title}}
-                      <div
-                        class="user-profile-names__title"
-                      >{{this.user.title}}</div>
-                    {{/if}}
+              <div class="user-info-avatar">
+                <UserProfileAvatar @user={{this.user}} @tagName="user-info-avatar" />
+              </div>
+              <div class="primary-textual">
+                <div class="user-profile-names">
+                  <div
+                    class="username user-profile-names__primary"
+                  >
+                    {{formatUsername this.user.username}}
                   </div>
+                  {{#if this.user.title}}
+                    <div
+                      class="user-profile-names__title"
+                    >{{this.user.title}}</div>
+                  {{/if}}
                 </div>
               </div>
             </div>
