@@ -65,7 +65,7 @@ export default class FeaturedUserBanner extends Component {
       {{#if this.loading}}
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
-        <div class="user-card-avatar" style="width: var(--avatar-width);" aria-hidden="true">
+        <div class="user-card-avatar" style="width: 8em;" aria-hidden="true">
           {{#if this.showAvatar}}
             <a
               href={{this.userModel.path}}
