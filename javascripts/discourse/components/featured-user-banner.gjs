@@ -68,13 +68,13 @@ export default class FeaturedUserBanner extends Component {
       {{else}}
         <div class="featured-user-banner">
           {{#if this.showAvatar}}
-            <div class="user-avatar" aria-hidden="true">
+            <div class="user-avatar" style="max-height: 8em; width: 8em;" aria-hidden="true">
               <a
                 href={{this.userModel.path}}
                 class="card-huge-avatar"
                 tabindex="-1"
               >{{boundAvatar this.user "huge"}}</a>
-              {{#if (and this.showAvatarFlair this.showAvatar)}}
+              {{#if this.showAvatarFlair}}
                 <UserAvatarFlair @user={{this.user}} />
               {{/if}}
             </div>
