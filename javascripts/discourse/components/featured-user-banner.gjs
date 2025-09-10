@@ -57,7 +57,7 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
-          <h1>THIS:{{this.userSummary.days_visited}}</h1>
+          <h1>THIS:{{this.loading}}</h1>
           <div class="user-info">
             <div class="details">
               <div class="primary">
