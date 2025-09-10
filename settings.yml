@@ -1,2 +1,46 @@
-example_setting:
+featured_user:
+  default: ""
+  type: username
+
+featured_user_banner_text:
+  default: ""
+  type: string
+
+featured_user_banner_display_start_date:
+  default: ""
+  type: time
+
+featured_user_banner_display_end_date:
+  default: ""
+  type: time
+
+display_total_likes_given:
   default: true
+  type: bool
+
+display_total_likes_received:
+  default: true
+  type: bool
+
+display_total_post_count:
+  default: true
+  type: bool
+
+display_total_topic_count:
+  default: true
+  type: bool
+
+display_title:
+  default: true
+  type: bool
+
+display_flair:
+  default: true
+  type: bool
+
+display_avatar:
+  default: true
+  type: bool
+
+display_trust_level:
+  default: false
