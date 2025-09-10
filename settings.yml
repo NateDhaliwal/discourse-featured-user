@@ -41,15 +41,3 @@ display_total_days_visited:
 display_title:
   default: true
   type: bool
-
-display_flair:
-  default: true
-  type: bool
-
-display_avatar:
-  default: true
-  type: bool
-
-display_trust_level:
-  default: false
-  type: bool
