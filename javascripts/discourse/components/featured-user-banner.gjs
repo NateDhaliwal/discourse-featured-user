@@ -2,6 +2,7 @@ import { on } from "@ember/modifier";
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
+import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import User from "discourse/models/user";
 
 export default class FeaturedUserBanner extends Component {
