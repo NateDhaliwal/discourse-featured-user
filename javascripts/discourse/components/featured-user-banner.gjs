@@ -4,7 +4,7 @@ import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import { ajax } from "discourse/lib/ajax";
-import { and } from "trusth-helpers";
+import { and } from "truth-helpers";
 import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
