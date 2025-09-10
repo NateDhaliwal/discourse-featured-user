@@ -28,8 +28,6 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get shouldShow() {
-    console.log(this.user);
-    console.log(this.userSummary);
     return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
   }
 
@@ -39,6 +37,9 @@ export default class FeaturedUserBanner extends Component {
   get showTotalTopics() { return settings.display_total_topic_count; }
   get showLikesGiven() { return settings.display_total_likes_given; }
   get showLikesReceived() { return settings.display_total_likes_received; }
+
+  get featuredUserBannerText() { return settings.featured_user_banner_text; }
+  get featuredUserBannerTextPosition() { return settings.featured_user_banner_text_position; }
 
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
