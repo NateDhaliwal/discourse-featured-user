@@ -3,6 +3,7 @@ import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
+import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
 import { and } from "truth-helpers";
 import User from "discourse/models/user";
@@ -32,6 +33,7 @@ export default class FeaturedUserBanner extends Component {
   get showAvatar() { return settings.display_avatar; }
   get showAvatarFlair() { return settings.display_flair; }
   get showReadTime() { return settings.display_total_read_time; }
+  get showDaysVisited() { return settings.display_total_days_visited; }
   get showTotalPosts() { return settings.display_total_post_count; }
   get showTotalTopics() { return settings.display_total_topic_time; }
   get showLikesGiven() { return settings.display_total_likes_given; }
@@ -68,20 +70,71 @@ export default class FeaturedUserBanner extends Component {
             </div>
           {{/if}}
 
-          <div class="user-stats">
-            <div class="user-stats-row" style="order: 1;">
+          <div class="top-section stats-section">
+            <h3 class="stats-title">{{i18n "user.summary.stats"}}</h3>
+            <ul>
+              {{#if this.showDaysVisited}}
+                <li class="stats-days-visited">
+                  <UserStat
+                    @value={{this.userSummary.days_visited}}
+                    @label="user.summary.days_visited"
+                  />
+                </li>
+              {{/if}}
               {{#if this.showReadTime}}
-                <span class="desc">{{i18n "time_read"}}</span>
-                {{formatDuration this.user.time_read}}
+                <li class="stats-time-read">
+                  <UserStat
+                    @value={{this.userSummary.time_read}}
+                    @label="user.summary.time_read"
+                    @rawTitle={{i18n
+                      "user.summary.time_read_title"
+                      duration=this.userSummary.timeReadMedium
+                    }}
+                    @type="string"
+                  />
+                </li>
               {{/if}}
-            </div>
-            <div class="user-stats-row" style="order: 2;">
+              <!--
+              <li class="stats-posts-read">
+                <UserStat
+                  @value={{this.userSummary.posts_read_count}}
+                  @label="user.summary.posts_read"
+                />
+              </li>
+              -->
+              {{#if this.showLikesGiven}}
+                <li class="stats-likes-given">
+                  <UserStat
+                    @value={{this.userSummary.likes_given}}
+                    @icon="heart"
+                    @label="user.summary.likes_given"
+                  />
+                </li>
+              {{/if}}
+              <li class="stats-likes-received">
+                <UserStat
+                  @value={{this.userSummary.likes_received}}
+                  @icon="heart"
+                  @label="user.summary.likes_received"
+                />
+              </li>
+              {{#if this.showTotalTopics}}
+                <li class="stats-topic-count">
+                  <UserStat
+                    @value={{this.userSummary.topic_count}}
+                    @label="user.summary.topic_count"
+                  />
+                </li>
+              {{/if}}
               {{#if this.showTotalPosts}}
-                <span class="desc">{{i18n "time_read"}}</span>
-                {{formatDuration this.user.time_read}}
+                <li class="stats-post-count">
+                  <UserStat
+                    @value={{this.userSummary.post_count}}
+                    @label="user.summary.post_count"
+                  />
+                </li>
               {{/if}}
-            </div>
-            
+            </ul>
           </div>
         </div>
       {{/if}}
