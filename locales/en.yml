@@ -1,5 +1,5 @@
 en:
   theme_metadata:
-    description: "TODO"
+    description: "Adds a banner to the top of the site to feature a user"
     settings:
       example_setting: "A description of a setting."
