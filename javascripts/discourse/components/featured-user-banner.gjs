@@ -2,12 +2,14 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import boundAvatar from "discourse/helpers/bound-avatar";
 import UserAvatarFlair from "discourse/components/user-avatar-flair";
+import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import { ajax } from "discourse/lib/ajax";
 import User from "discourse/models/user";
 
 export default class FeaturedUserBanner extends Component {
   @tracked userModel;
   @tracked user;
+  @tracked loading = false;
 
   // Add checking with timestamps one day?
   startDate = new Date(settings.featured_user_banner_display_start_date.trim());
@@ -33,6 +35,7 @@ export default class FeaturedUserBanner extends Component {
     this.user = userData.user;
     const userModelData = await User.findByUsername(settings.featured_user.trim());
     this.userModel = userModelData;
+    this.loading = true;
   }
 
 
@@ -56,19 +59,23 @@ export default class FeaturedUserBanner extends Component {
 
   <template>
     {{#if this.shouldShow}}
-      <div class="user-card-avatar" aria-hidden="true">
-        {{#if this.showAvatar}}
-          <a
-            href={{this.userModel.path}}
-            class="card-huge-avatar"
-            tabindex="-1"
-          >{{boundAvatar this.user "huge"}}</a>
-        {{/if}}
-  
-        {{#if this.showAvatarFlair}}
-          <UserAvatarFlair @user={{this.user}} />
-        {{/if}}
-      </div>
+      {{#if this.loading}}
+        <ConditionalLoadingSpinner @condition={{this.loading}} />
+      {{else}}
+        <div class="user-card-avatar" aria-hidden="true">
+          {{#if this.showAvatar}}
+            <a
+              href={{this.userModel.path}}
+              class="card-huge-avatar"
+              tabindex="-1"
+            >{{boundAvatar this.user "huge"}}</a>
+          {{/if}}
+    
+          {{#if this.showAvatarFlair}}
+            <UserAvatarFlair @user={{this.user}} />
+          {{/if}}
+        </div>
+      {{/if}}
     {{/if}}
   </template>
 }
