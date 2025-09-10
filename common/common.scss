@@ -14,16 +14,12 @@
 }
 
 .user-avatar {
-  @if $display_avatar == "true" {
-    order: 1;
-    margin-right: 2em;
-  }
+  order: 1;
+  margin-right: 2em;
   width: 8em;
 }
 
 .user-stats-section {
-  @if $display_avatar == "true" {
-    order: 2;
-  }
+  order: 2;
 }
 
