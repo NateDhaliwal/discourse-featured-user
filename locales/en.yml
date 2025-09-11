@@ -30,3 +30,4 @@ en:
       display_total_topic_count: "Display the total topics made by the user"
       display_total_read_time: "Display the total read time by the user"
       display_total_days_visited: "Display the total number of days visited by the user"
+      display_gamification_score: "Display the gamification score of the user"
