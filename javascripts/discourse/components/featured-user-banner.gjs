@@ -1,13 +1,10 @@
 import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
-import boundAvatar from "discourse/helpers/bound-avatar";
-import UserAvatarFlair from "discourse/components/user-avatar-flair";
 import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
 import { eq, notEq } from "truth-helpers";
-import User from "discourse/models/user";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
 import formatUsername from "discourse/helpers/format-username";
