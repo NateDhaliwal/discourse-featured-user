@@ -27,6 +27,8 @@ user-info-avatar > .user-profile-avatar .avatar-flair.rounded {
 .featured-user-banner-main {
   display: flex;
   flex-direction: row;
+  align-self: center;
+  justify-content: center;
 
   .user-info {
     margin-right: 0.5em;
