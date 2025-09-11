@@ -36,7 +36,7 @@ export default class FeaturedUserBanner extends Component {
   get showLikesReceived() { return settings.display_total_likes_received; }
 
   get featuredUserBannerText() { return settings.featured_user_banner_text; }
-  get featuredUserBannerTextPosition() { return settings.featured_user_banner_text_position == "below-user-info" ? "below" : "after"; }
+  get featuredUserBannerTextPosition() { return settings.featured_user_banner_text_position === "below-user-info" ? "below" : "after"; }
 
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
