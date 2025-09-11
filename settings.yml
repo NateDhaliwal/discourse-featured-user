@@ -13,6 +13,13 @@ featured_user_banner_text_position:
   choices:
     - above-user-info
 
+featured_user_banner_text_align:
+  default: center
+  type: enum
+  choices:
+    - right
+    - left
+
 featured_user_banner_display_start_date:
   default: ""
   type: string
