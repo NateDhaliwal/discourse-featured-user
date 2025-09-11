@@ -13,11 +13,10 @@
   flex-direction: column;
   margin-bottom: 2em;
   text-align: justify;
-
   border: #{$featured_user_banner_border_thickness}px solid $featured_user_banner_border_color;
   border-radius: #{$featured_user_banner_border_roundness}px;
-
   padding: 1em;
+  width: fit-content;
 }
 
 .featured-user-banner-main {
