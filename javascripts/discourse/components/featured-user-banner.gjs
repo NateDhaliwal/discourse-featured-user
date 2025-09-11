@@ -75,101 +75,103 @@ export default class FeaturedUserBanner extends Component {
       {{else}}
         <div class="featured-user-banner">
           {{#if (eq this.featuredUserBannerTextPosition "above")}}
-            <div class="featured-banner-text-above">
+            <div class="featured-banner-text">
               <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
             </div>
           {{/if}}
-          <div class="user-info">
-            <div class="details">
-              <div class="user-info-avatar">
-                <UserProfileAvatar @user={{this.user}} @tagName="user-info-avatar" />
-              </div>
-              <div class="primary-textual">
-                <div class="user-profile-names">
-                  <div
-                    class="username user-profile-names__primary"
-                  >
-                    {{formatUsername this.user.username}}
-                  </div>
-
-                  {{#if (notEq this.user.name "")}}
-                    <div class="name">
-                      <h3>{{this.user.name}}</h3>
-                    </div>
-                  {{/if}}
-
-                  {{#if this.user.title}}
+          <div class="featured-user-banner-main">
+            <div class="user-info">
+              <div class="details">
+                <div class="user-info-avatar">
+                  <UserProfileAvatar @user={{this.user}} @tagName="user-info-avatar" />
+                </div>
+                <div class="primary-textual">
+                  <div class="user-profile-names">
                     <div
-                      class="user-profile-names__title"
-                    >{{this.user.title}}</div>
-                  {{/if}}
+                      class="username user-profile-names__primary"
+                    >
+                      {{formatUsername this.user.username}}
+                    </div>
+  
+                    {{#if (notEq this.user.name "")}}
+                      <div class="name">
+                        <h3>{{this.user.name}}</h3>
+                      </div>
+                    {{/if}}
+  
+                    {{#if this.user.title}}
+                      <div
+                        class="user-profile-names__title"
+                      >{{this.user.title}}</div>
+                    {{/if}}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-
-          <div class="user-stats-section stats-section top-section">
-            <h3 class="stats-title">{{i18n "user.summary.stats"}}</h3>
-            <ul>
-              {{#if this.showDaysVisited}}
-                <li class="stats-days-visited">
-                  <UserStat
-                    @value={{this.userSummary.days_visited}}
-                    @label={{if (eq this.userSummary.days_visited 1) "user.summary.days_visited.other" "user.summary.days_visited.other"}}
-                  />
-                </li>
-              {{/if}}
-              {{#if this.showReadTime}}
-                <li class="stats-time-read">
-                  <UserStat
-                    @value={{formatDuration this.userSummary.time_read}}
-                    @label="user.summary.time_read"
-                    @rawTitle={{i18n
-                      "user.summary.time_read_title"
-                      duration=this.userSummary.time_read
-                    }}
-                    @type="string"
-                  />
-                </li>
-              {{/if}}
-              {{#if this.showLikesGiven}}
-                <li class="stats-likes-given">
-                  <UserStat
-                    @value={{this.userSummary.likes_given}}
-                    @icon="heart"
-                    @label={{if (eq this.userSummary.likes_given 1) "user.summary.likes_given.one" "user.summary.likes_given.other"}}
-                  />
-                </li>
-              {{/if}}
-              {{#if this.showLikesReceived}}
-                <li class="stats-likes-received">
-                  <UserStat
-                    @value={{this.userSummary.likes_received}}
-                    @icon="heart"
-                    @label={{if (eq this.userSummary.likes_received 1) "user.summary.likes_received.one" "user.summary.likes_received.other"}}
-                  />
-                </li>
-              {{/if}}
-              {{#if this.showTotalTopics}}
-                <li class="stats-topic-count">
-                  <UserStat
-                    @value={{this.userSummary.topic_count}}
-                    @label={{if (eq this.userSummary.topic_count 1) "user.summary.topic_count.one" "user.summary.topic_count.other"}}
-                  />
-                </li>
-              {{/if}}
-              {{#if this.showTotalPosts}}
-                <li class="stats-post-count">
-                  <UserStat
-                    @value={{this.userSummary.post_count}}
-                    @label={{if (eq this.userSummary.post_count 1) "user.summary.post_count.one" "user.summary.post_count.other"}}
-                  />
-                </li>
-              {{/if}}
-            </ul>
+  
+            <div class="user-stats-section stats-section top-section">
+              <h3 class="stats-title">{{i18n "user.summary.stats"}}</h3>
+              <ul>
+                {{#if this.showDaysVisited}}
+                  <li class="stats-days-visited">
+                    <UserStat
+                      @value={{this.userSummary.days_visited}}
+                      @label={{if (eq this.userSummary.days_visited 1) "user.summary.days_visited.other" "user.summary.days_visited.other"}}
+                    />
+                  </li>
+                {{/if}}
+                {{#if this.showReadTime}}
+                  <li class="stats-time-read">
+                    <UserStat
+                      @value={{formatDuration this.userSummary.time_read}}
+                      @label="user.summary.time_read"
+                      @rawTitle={{i18n
+                        "user.summary.time_read_title"
+                        duration=this.userSummary.time_read
+                      }}
+                      @type="string"
+                    />
+                  </li>
+                {{/if}}
+                {{#if this.showLikesGiven}}
+                  <li class="stats-likes-given">
+                    <UserStat
+                      @value={{this.userSummary.likes_given}}
+                      @icon="heart"
+                      @label={{if (eq this.userSummary.likes_given 1) "user.summary.likes_given.one" "user.summary.likes_given.other"}}
+                    />
+                  </li>
+                {{/if}}
+                {{#if this.showLikesReceived}}
+                  <li class="stats-likes-received">
+                    <UserStat
+                      @value={{this.userSummary.likes_received}}
+                      @icon="heart"
+                      @label={{if (eq this.userSummary.likes_received 1) "user.summary.likes_received.one" "user.summary.likes_received.other"}}
+                    />
+                  </li>
+                {{/if}}
+                {{#if this.showTotalTopics}}
+                  <li class="stats-topic-count">
+                    <UserStat
+                      @value={{this.userSummary.topic_count}}
+                      @label={{if (eq this.userSummary.topic_count 1) "user.summary.topic_count.one" "user.summary.topic_count.other"}}
+                    />
+                  </li>
+                {{/if}}
+                {{#if this.showTotalPosts}}
+                  <li class="stats-post-count">
+                    <UserStat
+                      @value={{this.userSummary.post_count}}
+                      @label={{if (eq this.userSummary.post_count 1) "user.summary.post_count.one" "user.summary.post_count.other"}}
+                    />
+                  </li>
+                {{/if}}
+              </ul>
+            </div>
           </div>
           {{#if (eq this.featuredUserBannerTextPosition "below")}}
-            <div class="featured-banner-text-below">
+            <div class="featured-banner-text">
               <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
             </div>
           {{/if}}
