@@ -9,6 +9,6 @@ export default apiInitializer((api) => {
     "post-meta-data-poster-name-user-link",
     <template>
       &nbsp;<FeaturedUserIcon />
-    </template?
+    </template>
   );
 });
