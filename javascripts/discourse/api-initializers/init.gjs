@@ -15,7 +15,8 @@ export default apiInitializer((api) => {
         console.log(this.args.user.username);
         console.log(settings.featured_user_show_featured_icon_in_user_card);
         console.log(settings.featured_user.toString().trim() === this.args.user.username.toString());
-        return settings.featured_user_show_featured_icon_in_user_card && this.args.user.username === settings.featured_user.trim();
+        return true;
+        // return settings.featured_user_show_featured_icon_in_user_card && this.args.user.username === settings.featured_user.trim();
       }
 
       get iconNameFromSetting() {
