@@ -45,6 +45,6 @@
   display: flex;
 }
 
-.featured-user-card-icon > .svg-icon {
-  color: $featured_user_featured_icon_color_on_user_card;
+.featured-user-card-icon > .fk-d-tooltip__trigger > .fk-d-tooltip__trigger-container > .fk-d-tooltip__icon > svg.svg-icon.d-icon {
+  color: $featured_user_featured_icon_color_on_user_card !important;
 }
