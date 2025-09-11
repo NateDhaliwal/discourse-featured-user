@@ -12,6 +12,7 @@ export default apiInitializer((api) => {
     "user-card-after-username",
     class FeaturedUserIcon extends Component {
       get shouldShow() {
+        console.log(this.args.user);
         return settings.featured_user_show_featured_icon_in_user_card && this.args.user.username === settings.featured_user.trim();
       }
 
