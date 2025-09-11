@@ -25,6 +25,20 @@ featured_user_banner_display_on_homepage:
   default: true
   type: bool
 
+featured_user_banner_border_color:
+  default: "var(--header_background)"
+  type: string
+  
+featured_user_banner_border_thickness:
+  default: 1
+  type: int
+  min: 1
+
+featured_user_banner_border_roundness:
+  default: 10
+  type: int
+  min: 1
+
 featured_user_show_featured_icon_in_user_card:
   default: true
   type: bool
