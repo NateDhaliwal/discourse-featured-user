@@ -16,7 +16,10 @@
   border: #{$featured_user_banner_border_thickness}px solid $featured_user_banner_border_color;
   border-radius: #{$featured_user_banner_border_roundness}px;
   padding: 1em;
-  width: fit-content;
+  
+  @if $auto-resize-banner == "true" {
+    width: fit-content;
+  }
 }
 
 .featured-user-banner-main {
