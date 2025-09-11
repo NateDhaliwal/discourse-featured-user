@@ -2,7 +2,12 @@ featured_user:
   default: ""
   type: string
 
-featured_user_banner_text:
+featured_user_banner_text_above:
+  default: ""
+  type: string
+  textarea: true
+
+featured_user_banner_text_below:
   default: ""
   type: string
   textarea: true
