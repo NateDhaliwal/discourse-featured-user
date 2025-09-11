@@ -4,5 +4,6 @@ import FeaturedUserIcon from "../components/featured-user-icon";
 
 export default apiInitializer((api) => {
   api.renderInOutlet("above-main-container", FeaturedUserBanner);
-  api.renderInOutlet("user-card-after-username", FeaturedUserIcon);
+  api.renderInOutlet("user-card-post-names", FeaturedUserIcon);
+  api.renderAfterWrapperOutlet("post-meta-data-poster-name-user-link", FeaturedUserIcon);
 });
