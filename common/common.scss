@@ -45,6 +45,6 @@
   display: flex;
 }
 
-.featured-user-card-icon {
+.featured-user-card-icon > .svg-icon {
   color: $featured_user_featured_icon_color_on_user_card;
 }
