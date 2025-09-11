@@ -23,6 +23,9 @@
 .featured-user-banner-main {
   display: flex;
   flex-direction: row;
+  .user-info, .user-info > .details {
+    flex: 1;
+  }
 }
 
 .featured-banner-text {
