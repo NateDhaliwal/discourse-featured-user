@@ -71,7 +71,9 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get showGamificationScore() {
-    return settings.display_gamification_score;
+    return this.user.gamification_score !== undefined
+    ? settings.display_gamification_score
+    : false;
   }
 
   get isAnyStatsShowing() {
