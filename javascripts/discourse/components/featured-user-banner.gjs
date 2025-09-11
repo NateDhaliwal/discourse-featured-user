@@ -49,18 +49,23 @@ export default class FeaturedUserBanner extends Component {
   get showReadTime() {
     return settings.display_total_read_time;
   }
+
   get showDaysVisited() {
     return settings.display_total_days_visited;
   }
+
   get showTotalPosts() {
     return settings.display_total_post_count;
   }
+
   get showTotalTopics() {
     return settings.display_total_topic_count;
   }
+
   get showLikesGiven() {
     return settings.display_total_likes_given;
   }
+
   get showLikesReceived() {
     return settings.display_total_likes_received;
   }
