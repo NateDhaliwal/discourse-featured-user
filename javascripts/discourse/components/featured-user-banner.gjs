@@ -121,7 +121,8 @@ export default class FeaturedUserBanner extends Component {
               <h2>{{htmlSafe this.featuredUserBannerTextAbove}}</h2>
             </div>
           {{/if}}
-          <div class="featured-user-banner-main" style={{if (not (this.isAnyStatsShowing)) "justify-content: center;"}}>
+          {{(not (this.isAnyStatsShowing))}}
+          <div class="featured-user-banner-main" style={{if (not (this.isAnyStatsShowing)) "justify-content: center;" ""}}>
             <div class="user-info">
               <div class="details">
                 <div class="user-info-avatar">
