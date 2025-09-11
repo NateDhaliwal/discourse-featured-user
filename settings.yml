@@ -46,6 +46,10 @@ featured_user_banner_border_roundness:
   type: integer
   min: 1
 
+auto_resize_banner:
+  default: false
+  type: bool
+
 featured_user_show_featured_icon_in_user_card:
   default: true
   type: bool
