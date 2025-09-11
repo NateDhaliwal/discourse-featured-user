@@ -57,8 +57,8 @@ export default class FeaturedUserBanner extends Component {
     return this.showReadTime || this.showDaysVisited || this.showTotalPosts || this.showTotalTopics || this.showLikesGiven || this.showLikesReceived;
   }
 
-  get featuredUserBannerText() { return settings.featured_user_banner_text; }
-  get featuredUserBannerTextPosition() { return settings.featured_user_banner_text_position === "below-user-info" ? "below" : "above"; }
+  get featuredUserBannerTextAbove() { return settings.featured_user_banner_text_above; }
+  get featuredUserBannerTextBelow() { return settings.featured_user_banner_text_below; }
 
   async getUser() {
     const userData = await ajax(`/u/${settings.featured_user.trim()}`);
@@ -78,9 +78,9 @@ export default class FeaturedUserBanner extends Component {
         <ConditionalLoadingSpinner @condition={{this.loading}} />
       {{else}}
         <div class="featured-user-banner">
-          {{#if (eq this.featuredUserBannerTextPosition "above")}}
+          {{#if this.featuredUserBannerTextAbove}}
             <div class="featured-banner-text">
-              <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
+              <h2>{{htmlSafe this.featuredUserBannerTextAbove}}</h2>
             </div>
           {{/if}}
           <div class="featured-user-banner-main">
@@ -176,9 +176,9 @@ export default class FeaturedUserBanner extends Component {
               </div>
             {{/if}}
           </div>
-          {{#if (eq this.featuredUserBannerTextPosition "below")}}
+          {{#if featuredUserBannerTextBelow)}}
             <div class="featured-banner-text">
-              <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
+              <h2>{{htmlSafe this.featuredUserBannerTextBelow}}</h2>
             </div>
           {{/if}}
         </div>
