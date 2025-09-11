@@ -31,12 +31,12 @@ featured_user_banner_border_color:
   
 featured_user_banner_border_thickness:
   default: 1
-  type: int
+  type: integer
   min: 1
 
 featured_user_banner_border_roundness:
   default: 10
-  type: int
+  type: integer
   min: 1
 
 featured_user_show_featured_icon_in_user_card:
