@@ -122,7 +122,7 @@ export default class FeaturedUserBanner extends Component {
             </div>
           {{/if}}
           {{not (this.isAnyStatsShowing)}}
-          <div class="featured-user-banner-main" style={{if (not (this.isAnyStatsShowing)) "justify-content: center;" ""}}>
+          <div class="featured-user-banner-main">
             <div class="user-info">
               <div class="details">
                 <div class="user-info-avatar">
