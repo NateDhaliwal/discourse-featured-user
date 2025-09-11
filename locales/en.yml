@@ -19,7 +19,7 @@ en:
       featured_user_banner_border_roundness: "The roundness of the banner border, in px"
       featured_user_banner_border_thickness: "The thickness of the banner border, in px"
       
-      featured_user_show_featured_icon_in_user_card: "Display an icon on the user card nex to the username while the user is featured"
+      featured_user_show_featured_icon_in_user_card: "Display an icon on the user card next to the username while the user is featured"
       featured_user_featured_icon_in_user_card: "The icon to show for the setting above"
       featured_user_featured_icon_color_on_user_card: "The color of the icon for the icon above"
       
