@@ -16,7 +16,7 @@ export default apiInitializer((api) => {
       }
 
       get iconName() {
-        return settings.featured_user_icon_on_user_card;
+        return settings.featured_user_featured_icon_in_user_card;
       }
 
       <template>
