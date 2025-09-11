@@ -4,6 +4,7 @@ import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
 import icon from "discourse/helpers/d-icon";
 import DTooltip from "float-kit/components/d-tooltip";
+import { i18n } from "discourse-i18n";
 
 import FeaturedUserBanner from "../components/featured-user-banner.gjs";
 
@@ -25,7 +26,7 @@ export default apiInitializer((api) => {
           <span class="featured-user-card-icon">
             <DTooltip
               @icon={{this.iconNameFromSetting}}
-              @content={{themePrefix "user_card.featured_user_icon"}}
+              @content={{i18n (themePrefix "user_card.featured_user_icon")}}
             />
           </span>
         {{/if}}
