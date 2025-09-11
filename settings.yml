@@ -26,11 +26,11 @@ featured_user_banner_display_on_homepage:
   type: bool
 
 featured_user_banner_border_color:
-  default: "var(--header_background)"
+  default: "var(--primary)"
   type: string
   
 featured_user_banner_border_thickness:
-  default: 1
+  default: 3
   type: integer
   min: 1
 
