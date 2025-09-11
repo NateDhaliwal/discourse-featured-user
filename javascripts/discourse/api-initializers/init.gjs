@@ -1,5 +1,4 @@
 import { apiInitializer } from "discourse/lib/api";
-
 import FeaturedUserBanner from "../components/featured-user-banner";
 import FeaturedUserIcon from "../components/featured-user-icon";
 

@@ -1,4 +1,5 @@
-.user-info-avatar > .avatar-flair.rounded, user-info-avatar > .user-profile-avatar .avatar-flair.rounded {
+.user-info-avatar > .avatar-flair.rounded,
+user-info-avatar > .user-profile-avatar .avatar-flair.rounded {
   background-size: 30px 30px !important;
   border-radius: 24px !important;
   width: 40px !important;
@@ -13,10 +14,11 @@
   flex-direction: column;
   margin-bottom: 2em;
   text-align: justify;
-  border: #{$featured_user_banner_border_thickness}px solid $featured_user_banner_border_color;
+  border: #{$featured_user_banner_border_thickness}px solid
+    $featured_user_banner_border_color;
   border-radius: #{$featured_user_banner_border_roundness}px;
   padding: 1em;
-  
+
   @if $auto_resize_banner == "true" {
     width: fit-content;
   }
@@ -25,11 +27,12 @@
 .featured-user-banner-main {
   display: flex;
   flex-direction: row;
-  
-  .user-info, .user-info > .details {
+
+  .user-info,
+  .user-info > .details {
     flex: 1;
   }
-  
+
   .user-stats-section {
     flex: 1;
   }
@@ -37,6 +40,7 @@
 
 .featured-banner-text-above {
   text-align: $featured_user_banner_text_align;
+
   /* Have a bit of gap below the text */
   margin-bottom: 1em;
 }
@@ -61,10 +65,15 @@
   order: 3;
 }
 
-.user-info, .user-info > .details {
+.user-info,
+.user-info > .details {
   display: flex;
 }
 
-.featured-user-card-icon > .fk-d-tooltip__trigger > .fk-d-tooltip__trigger-container > .fk-d-tooltip__icon > svg.svg-icon.d-icon {
+.featured-user-card-icon
+  > .fk-d-tooltip__trigger
+  > .fk-d-tooltip__trigger-container
+  > .fk-d-tooltip__icon
+  > svg.svg-icon.d-icon {
   color: $featured_user_featured_icon_color_on_user_card !important;
 }
