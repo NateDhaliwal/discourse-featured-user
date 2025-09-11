@@ -1,4 +1,7 @@
-en:      
+en:
+  user_card:
+    featured_user_icon: "This user has been featured!"
+
   theme_metadata:
     description: "Adds a banner to the top of the site to feature a user"
 
