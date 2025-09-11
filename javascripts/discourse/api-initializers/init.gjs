@@ -14,7 +14,7 @@ export default apiInitializer((api) => {
       get shouldShow() {
         console.log(this.args.user.username);
         console.log(settings.featured_user_show_featured_icon_in_user_card);
-        console.log(settings.featured_user.trim());
+        console.log(settings.featured_user.toString().trim() === this.args.user.username.toString());
         return settings.featured_user_show_featured_icon_in_user_card && this.args.user.username === settings.featured_user.trim();
       }
 
