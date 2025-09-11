@@ -19,6 +19,10 @@ featured_user_banner_text_align:
     - right
     - left
 
+auto_resize_banner:
+  default: false
+  type: bool
+
 featured_user_banner_display_start_date:
   default: "1900-01-01"
   type: string
@@ -44,10 +48,6 @@ featured_user_banner_border_roundness:
   default: 10
   type: integer
   min: 1
-
-auto_resize_banner:
-  default: false
-  type: bool
 
 featured_user_show_featured_icon_in_user_card:
   default: true
