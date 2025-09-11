@@ -21,7 +21,9 @@ export default apiInitializer((api) => {
 
       <template>
         {{#if this.shouldShow}}
-          {{icon this.iconNameFromSetting}}
+          <span class="featured-user-card-icon">
+            {{icon this.iconNameFromSetting}}
+          </span>
         {{/if}}
       </template>
     }
