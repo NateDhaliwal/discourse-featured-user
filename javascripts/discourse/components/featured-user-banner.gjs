@@ -39,6 +39,8 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get shouldShow() {
+    // eslint-disable-next-line no-console
+    console.log(this.user);
     if (settings.featured_user_banner_display_on_homepage) {
       return this.withinDates && this.isHomepage;
     } else {
@@ -84,6 +86,7 @@ export default class FeaturedUserBanner extends Component {
   get featuredUserBannerTextAbove() {
     return settings.featured_user_banner_text_above;
   }
+
   get featuredUserBannerTextBelow() {
     return settings.featured_user_banner_text_below;
   }
