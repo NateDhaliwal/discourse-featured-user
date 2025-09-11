@@ -3,6 +3,7 @@ import Component from "@glimmer/component";
 import { apiInitializer } from "discourse/lib/api";
 import { defaultHomepage } from "discourse/lib/utilities";
 import icon from "discourse/helpers/d-icon";
+import DTooltip from "float-kit/components/d-tooltip";
 
 import FeaturedUserBanner from "../components/featured-user-banner.gjs";
 
@@ -22,7 +23,10 @@ export default apiInitializer((api) => {
       <template>
         {{#if this.shouldShow}}
           <span class="featured-user-card-icon">
-            {{icon this.iconNameFromSetting}}
+            <DTooltip
+              @icon={{this.iconNameFromSetting}}
+              @content={{themPrefix ("user_card.")}}
+            />
           </span>
         {{/if}}
       </template>
