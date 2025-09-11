@@ -25,7 +25,7 @@ export default apiInitializer((api) => {
           <span class="featured-user-card-icon">
             <DTooltip
               @icon={{this.iconNameFromSetting}}
-              @content={{themPrefix ("user_card.featured_user_icon")}}
+              @content={{themePrefix ("user_card.featured_user_icon")}}
             />
           </span>
         {{/if}}
