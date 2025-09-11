@@ -15,12 +15,14 @@ export default apiInitializer((api) => {
         return settings.featured_user_show_featured_icon_in_user_card && this.args.user.username === settings.featured_user.trim();
       }
 
-      get iconName() {
+      get iconNameFromSetting() {
         return settings.featured_user_featured_icon_in_user_card;
       }
 
       <template>
-        {{icon this.iconName}}
+        {{#if this.shouldShow}}
+          {{icon this.iconNameFromSetting}}
+        {{/if}}
       </template>
     }
   );
