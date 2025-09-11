@@ -13,6 +13,9 @@
   flex-direction: column;
   margin-bottom: 2em;
   text-align: justify;
+
+  border: #{$featured_user_banner_thickness}px solid $featured_user_banner_border_color;
+  border-radius: #{$featured_user_banner_border_roundness}px;
 }
 
 .featured-user-banner-main {
