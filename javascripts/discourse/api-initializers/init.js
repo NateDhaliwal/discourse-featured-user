@@ -4,6 +4,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 
 export default apiInitializer((api) => {
   const router = api.container.lookup("service:router");
+  console.log(router);
   if (router.currentRouteName === `discovery.${defaultHomepage()}`) {
     api.renderInOutlet("above-main-container", FeaturedUserBanner);
   }
