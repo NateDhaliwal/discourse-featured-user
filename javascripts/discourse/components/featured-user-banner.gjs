@@ -79,7 +79,7 @@ export default class FeaturedUserBanner extends Component {
       {{else}}
         <div class="featured-user-banner">
           {{#if this.featuredUserBannerTextAbove}}
-            <div class="featured-banner-text">
+            <div class="featured-banner-text-above">
               <h2>{{htmlSafe this.featuredUserBannerTextAbove}}</h2>
             </div>
           {{/if}}
@@ -177,7 +177,7 @@ export default class FeaturedUserBanner extends Component {
             {{/if}}
           </div>
           {{#if featuredUserBannerTextBelow}}
-            <div class="featured-banner-text">
+            <div class="featured-banner-text-below">
               <h2>{{htmlSafe this.featuredUserBannerTextBelow}}</h2>
             </div>
           {{/if}}
