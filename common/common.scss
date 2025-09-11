@@ -28,6 +28,10 @@ user-info-avatar > .user-profile-avatar .avatar-flair.rounded {
   display: flex;
   flex-direction: row;
 
+  .user-info {
+    margin-right: 0.5em;
+  }
+
   .user-info > .details {
     flex: 1;
   }
