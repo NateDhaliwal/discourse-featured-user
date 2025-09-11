@@ -4,7 +4,7 @@ import { defaultHomepage } from "discourse/lib/utilities";
 
 export default apiInitializer((api) => {
   const router = api.container.lookup("service:router");
-  console.log(router.currentRouteName);
+  console.log(router);
   console.log(`discovery.${defaultHomepage()}`);
   console.log(router.currentRouteName === `discovery.${defaultHomepage()}`);
   if (router.currentRouteName === `discovery.${defaultHomepage()}`) {
