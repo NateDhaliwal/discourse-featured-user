@@ -5,6 +5,7 @@ featured_user:
 featured_user_banner_text:
   default: ""
   type: string
+  textarea: true
 
 featured_user_banner_text_position:
   default: below-user-info
@@ -20,6 +21,10 @@ featured_user_banner_display_start_date:
 featured_user_banner_display_end_date:
   default: ""
   type: string
+
+featured_user_banner_display_on_homepage:
+  default: true
+  type: bool
 
 display_total_likes_given:
   default: true
