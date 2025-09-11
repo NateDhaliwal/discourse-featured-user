@@ -23,7 +23,12 @@
 .featured-user-banner-main {
   display: flex;
   flex-direction: row;
+  
   .user-info, .user-info > .details {
+    flex: 1;
+  }
+  
+  .user-stats-section {
     flex: 1;
   }
 }
