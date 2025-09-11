@@ -72,6 +72,10 @@ export default class FeaturedUserBanner extends Component {
     return settings.display_total_likes_received;
   }
 
+  get showGamificationScore() {
+    return settings.display_gamification_score;
+  }
+
   get isAnyStatsShowing() {
     return (
       this.showReadTime ||
@@ -79,7 +83,8 @@ export default class FeaturedUserBanner extends Component {
       this.showTotalPosts ||
       this.showTotalTopics ||
       this.showLikesGiven ||
-      this.showLikesReceived
+      this.showLikesReceived ||
+      this.showGamificationScore
     );
   }
 
@@ -223,6 +228,14 @@ export default class FeaturedUserBanner extends Component {
                           "user.summary.post_count.one"
                           "user.summary.post_count.other"
                         }}
+                      />
+                    </li>
+                  {{/if}}
+                  {{#if this.showGamificationScore}}
+                    <li class="stats-gamification-score">
+                      <UserStat
+                        @value={{this.user.gamification_score}}
+                        @label="js.gamification_score"
                       />
                     </li>
                   {{/if}}
