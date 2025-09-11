@@ -20,11 +20,11 @@ featured_user_banner_text_align:
     - left
 
 featured_user_banner_display_start_date:
-  default: ""
+  default: "1900-01-01"
   type: string
 
 featured_user_banner_display_end_date:
-  default: ""
+  default: "2100-01-01"
   type: string
 
 featured_user_banner_display_on_homepage:
