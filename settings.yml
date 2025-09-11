@@ -48,7 +48,7 @@ featured_user_featured_icon_in_user_card:
   type: string
 
 featured_user_featured_icon_color_on_user_card:
-  default: var(--gold);
+  default: "var(--gold)"
   type: string
 
 display_total_likes_given:
