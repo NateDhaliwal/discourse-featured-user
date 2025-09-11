@@ -8,6 +8,7 @@ import { eq, notEq } from "truth-helpers";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
 import formatUsername from "discourse/helpers/format-username";
+import { htmlSafe } from "@ember/template";
 
 export default class FeaturedUserBanner extends Component {
   @tracked user;
@@ -58,7 +59,7 @@ export default class FeaturedUserBanner extends Component {
         <div class="featured-user-banner">
           {{#if (eq this.featuredUserBannerTextPosition "above")}}
             <div class="featured-banner-text-above">
-              <h2>{{this.featuredUserBannerText}}</h2>
+              <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
             </div>
           {{/if}}
           <div class="user-info">
@@ -152,7 +153,7 @@ export default class FeaturedUserBanner extends Component {
           </div>
           {{#if (eq this.featuredUserBannerTextPosition "below")}}
             <div class="featured-banner-text-below">
-              <h2>{{this.featuredUserBannerText}}</h2>
+              <h2>{{htmlSafe this.featuredUserBannerText}}</h2>
             </div>
           {{/if}}
         </div>
