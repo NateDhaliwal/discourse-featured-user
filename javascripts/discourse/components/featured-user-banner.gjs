@@ -29,13 +29,20 @@ export default class FeaturedUserBanner extends Component {
     this.getUser();
   }
 
-  get shouldShow() {
+  get isHomepage() {
     const { currentRouteName } = this.router;
+    return currentRouteName === `discovery.${defaultHomepage()}`;
+  }
 
+  get withinDates() {
+    return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
+  }
+
+  get shouldShow() {
     if (settings.featured_user_banner_display_on_homepage) {
-      return this.startDate <= this.dateNow && this.dateNow <= this.endDate && currentRouteName === `discovery.${defaultHomepage()}`;
+      return this.withinDates && this.isHomepage;
     } else {
-      return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
+      return this.withinDates;
     }
   }
 
