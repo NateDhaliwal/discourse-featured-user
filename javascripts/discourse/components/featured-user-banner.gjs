@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
-import { eq, notEq } from "truth-helpers";
+import { eq, notEq, not } from "truth-helpers";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import UserStat from "discourse/components/user-stat";
@@ -121,7 +121,7 @@ export default class FeaturedUserBanner extends Component {
               <h2>{{htmlSafe this.featuredUserBannerTextAbove}}</h2>
             </div>
           {{/if}}
-          <div class="featured-user-banner-main" style={{if (this.isAnyStatsShowing) "justify-content: center;"}}>
+          <div class="featured-user-banner-main" style={{if (not (this.isAnyStatsShowing)) "justify-content: center;"}}>
             <div class="user-info">
               <div class="details">
                 <div class="user-info-avatar">
