@@ -84,3 +84,7 @@ display_total_read_time:
 display_total_days_visited:
   default: false
   type: bool
+
+display_gamification_score:
+  default: false
+  type: bool
