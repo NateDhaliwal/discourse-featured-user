@@ -35,6 +35,11 @@
 
 .featured-banner-text {
   text-align: $featured_user_banner_text_align;
+  
+  @if $featured_user_banner_text_position == "above-user-info" {
+    /* Have a bit of gap below the text */
+    margin-bottom: 1em;
+  }
 }
 
 .user-avatar {
