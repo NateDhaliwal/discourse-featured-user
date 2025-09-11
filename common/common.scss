@@ -35,13 +35,14 @@
   }
 }
 
-.featured-banner-text {
+.featured-banner-text-above {
   text-align: $featured_user_banner_text_align;
-  
-  @if $featured_user_banner_text_position == "above-user-info" {
-    /* Have a bit of gap below the text */
-    margin-bottom: 1em;
-  }
+  /* Have a bit of gap below the text */
+  margin-bottom: 1em;
+}
+
+.featured-banner-text-below {
+  text-align: $featured_user_banner_text_align;
 }
 
 .user-avatar {
