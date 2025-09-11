@@ -7,8 +7,8 @@ en:
 
     settings:
       featured_user: "The username of the user you want to feature"
-      featured_user_banner_text: "The text in the banner to describe what the user has done (HTML is supported)"
-      featured_user_banner_text_position: "The location of the banner text: above or below the user's information"
+      featured_user_banner_text_above: "The text above the banner to describe what the user has done (HTML is supported)"
+      featured_user_banner_text_below: "The text below the banner to describe what the user has done (HTML is supported)"
       featured_user_banner_text_align: "How the banner text should be aligned: left, right or center"
       auto_resize_banner: "Automatically adjust the width of the banner to fit the number of items"
       
