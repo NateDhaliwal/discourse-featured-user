@@ -2,7 +2,7 @@ import Component from "@glimmer/component";
 import { tracked } from "@glimmer/tracking";
 import { service } from "@ember/service";
 import { htmlSafe } from "@ember/template";
-import { eq, notEq, not } from "truth-helpers";
+import { eq, notEq } from "truth-helpers";
 import ConditionalLoadingSpinner from "discourse/components/conditional-loading-spinner";
 import UserProfileAvatar from "discourse/components/user-profile-avatar";
 import UserStat from "discourse/components/user-stat";
