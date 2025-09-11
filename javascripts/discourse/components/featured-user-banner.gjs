@@ -121,7 +121,6 @@ export default class FeaturedUserBanner extends Component {
               <h2>{{htmlSafe this.featuredUserBannerTextAbove}}</h2>
             </div>
           {{/if}}
-          {{not (this.isAnyStatsShowing)}}
           <div class="featured-user-banner-main">
             <div class="user-info">
               <div class="details">
