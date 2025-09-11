@@ -74,7 +74,3 @@ display_total_read_time:
 display_total_days_visited:
   default: true
   type: bool
-
-display_title:
-  default: true
-  type: bool
