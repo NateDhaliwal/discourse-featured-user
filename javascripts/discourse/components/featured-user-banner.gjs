@@ -5,12 +5,16 @@ import ConditionalLoadingSpinner from "discourse/components/conditional-loading-
 import UserStat from "discourse/components/user-stat";
 import { ajax } from "discourse/lib/ajax";
 import { eq, notEq } from "truth-helpers";
+import { service } from "@ember/service";
+import { defaultHomepage } from "discourse/lib/utilities";
 import formatDuration from "discourse/helpers/format-duration";
 import { i18n } from "discourse-i18n";
 import formatUsername from "discourse/helpers/format-username";
 import { htmlSafe } from "@ember/template";
 
 export default class FeaturedUserBanner extends Component {
+  @service router;
+
   @tracked user;
   @tracked userSummary;
   @tracked loading = true;
@@ -26,7 +30,13 @@ export default class FeaturedUserBanner extends Component {
   }
 
   get shouldShow() {
-    return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
+    const { currentRouteName } = this.router;
+
+    if (settings.featured_user_banner_display_on_homepage) {
+      return this.startDate <= this.dateNow && this.dateNow <= this.endDate && currentRouteName === `discovery.${defaultHomepage()}`;
+    } else {
+      return this.startDate <= this.dateNow && this.dateNow <= this.endDate;
+    }
   }
 
   get showReadTime() { return settings.display_total_read_time; }
