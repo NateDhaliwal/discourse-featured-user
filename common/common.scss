@@ -25,6 +25,10 @@
   flex-direction: row;
 }
 
+.featured-banner-text {
+  text-align: $featured_user_banner_text_align;
+}
+
 .user-avatar {
   order: 1;
   margin-right: 2em;
