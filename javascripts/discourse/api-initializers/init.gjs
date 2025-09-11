@@ -6,7 +6,8 @@ export default apiInitializer((api) => {
   api.renderInOutlet("above-main-container", FeaturedUserBanner);
   api.renderInOutlet("user-card-post-names", FeaturedUserIcon);
 
-  // This one doesn't have much space between the username and the icon... do we still want it?
+  // This one doesn't have space between the username and the icon
+  // Do we still want it?
   api.renderAfterWrapperOutlet(
     "post-meta-data-poster-name-user-link",
     FeaturedUserIcon,
